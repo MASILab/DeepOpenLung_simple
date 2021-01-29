@@ -1,0 +1,13 @@
+
+"name": "deep open lung simple test"
+"release date": "Jan. 28, 2021"
+"vendor": 'Vanderbilt University'
+"author": 'Riqiang Gao'
+"cpu_memory": 4G
+"gpu_memory": 0G
+"version": 0.1
+'description': "The image preprocessing (lung segmentation) of the complete DeepOpenLung"
+
+
+  
+DOI: None 
