@@ -11,6 +11,11 @@ This is the first step of DeepOpenLung repository https://github.com/MASILab/Dee
 ```${PREP_ROOT}``` is the data folder saves the pre-processed result.
 ```${ORI_ROOT}``` is the data folder stores the scans you want to test.
 
+## create pdf report
+
+>python3 create_pdf.py --ori_root ${ORI_ROOT} --prep_root ${OUT_ROOT} --save_pdf_root ${OUT_ROOT}
+
+
 
 # Docker
 
