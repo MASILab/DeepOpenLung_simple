@@ -106,9 +106,9 @@ def savenpy(name,prep_folder,data_path,use_existing=True):
         #Save as nifti
         sliceim=sliceim.reshape(sliceim.shape[-3], sliceim.shape[-2], sliceim.shape[-1])
         matr=np.array([[0,0,-1,0],[0,-1,0,0],[1,0,0,0],[0,0,0,1]])
-        #ni_img = nib.Nifti1Image(sliceim, matr)
-        #activate the following line to keep conformity with old data
         ni_img = nib.Nifti1Image(sliceim, matr)
+        #activate the following line to keep conformity with old data
+        #ni_img = nib.Nifti1Image(sliceim, matr)
         nib.save(ni_img, os.path.join(prep_folder,name+'_clean.nii.gz'))
 
     except Exception as e:
@@ -124,18 +124,15 @@ if __name__ == '__main__':
     '''
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--sess_csv', type=str, default='./test.csv',
-                        help='sessions want to be tested')
     parser.add_argument('--prep_root', type=str, default='/nfs/masi/gaor2/tmp/justtest',
                         help='the root for save preprocessed data')
     parser.add_argument('--ori_root', type=str, default='/nfs/masi/gaor2/tmp/justtest',
                         help='the root of original data')
     args = parser.parse_args()
     
-    sess_splits = pd.read_csv(args.sess_csv)['exam_id'].tolist()
-    
-    for i in range(len(sess_splits)):
-        sess_id = sess_splits[i]
-        savenpy(name = sess_id, prep_folder = args.prep_root,
-            data_path = args.ori_root + '/' + sess_id + '.nii.gz')
-        np.save(args.prep_root + '/' + sess_id + '_label.npy', np.zeros((1, 4)))
+#    sess_splits = os.listdir(args.input_root)
+    file_names = os.listdir(args.ori_root)
+    file_names = [i for i in file_names if '.nii' in i]
+    for file_name in file_names:
+        savenpy(name = file_name.replace('.nii.gz', ''), prep_folder = args.prep_root, data_path = args.ori_root + '/' + file_name)
+        #np.save(args.prep_root + '/' + sess_id + '_label.npy', np.zeros((1, 4)))

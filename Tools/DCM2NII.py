@@ -8,8 +8,7 @@ if __name__ == '__main__':
                         help='sessions want to be tested')
     parser.add_argument('--nifti_root', type=str, default='./nifti_root',
                         help='the root of original data')
-    parser.add_argument('--sess_csv', type=str, default='./test.csv',
-                        help='sessions want to be tested')
+
     args = parser.parse_args()
     
     sess_list = os.listdir(args.sess_root)
