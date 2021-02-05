@@ -3,7 +3,7 @@
 python3 ./Tools/DCM2NII.py --sess_root ../DeepOpenLungData/INPUTS/DICOM --nifti_root ../DeepOpenLungData/INPUTS/NIfTI_from_DICOM 
 --prep_root ${OUT_ROOT} --ori_root ${ORI_ROOT} 
 
-python3 ./1_preprocess/step1_main.py --prep_root ../DeepOpenLungData/OUTPUTS/ --ori_root ../DeepOpenLungData/INPUTS/NIfTI
+python3 ./1_preprocess/step1_main.py --prep_root ../DeepOpenLungData/OUTPUTS/ --ori_root ../DeepOpenLungData/INPUTS/NIFTI
 
 python3 create_pdf.py --ori_root ../DeepOpenLungData/INPUTS/NIfTI --prep_root ../DeepOpenLungData/OUTPUTS/ --save_pdf_root ../DeepOpenLungData/OUTPUTS/
 

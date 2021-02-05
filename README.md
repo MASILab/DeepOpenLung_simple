@@ -19,18 +19,18 @@ This is the first step of DeepOpenLung repository https://github.com/MASILab/Dee
 
 # Docker
 
-Docker image can be downloaded from docker hub: rg15/deeplungsimple:0.1 
+Docker image can be downloaded from docker hub: rg15/deeplungsimple:0.2
 
 We can also use the DeepOpenLung example. INPUTS / OUTPUTS / config.yaml example can be downloaded from: 
 https://vanderbilt.box.com/s/6h6388kw6h4jbjogd8yk1xqp9eotd3tv
 
 
 (1)NIfTI: 
-> sudo docker run -u root -v {LOCAL INPUTS PATH}:/INPUTS/ -v {LOCAL OUTPUTS PATH}:/OUTPUTS/ deeplungsimple:0.1 sh run_all.sh 
+> sudo docker run -u root -v {LOCAL INPUTS PATH}:/INPUTS/ -v {LOCAL OUTPUTS PATH}:/OUTPUTS/ rg15/deeplungsimple:0.2 sh run_all.sh 
 
 
 (2) For DICOM-cpu: 
-> sudo docker run -u root -v {LOCAL INPUTS PATH}:/INPUTS/ -v {LOCAL OUTPUTS PATH}:/OUTPUTS/ deeplungsimple:0.1 sh run_all_DICOM.sh
+> sudo docker run -u root -v {LOCAL INPUTS PATH}:/INPUTS/ -v {LOCAL OUTPUTS PATH}:/OUTPUTS/ rg15/deeplungsimple:0.2 sh run_all_DICOM.sh
 
 
 
