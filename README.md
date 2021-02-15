@@ -24,6 +24,8 @@ Docker image can be downloaded from docker hub: rg15/deeplungsimple:0.2
 We can also use the DeepOpenLung example. INPUTS / OUTPUTS / config.yaml example can be downloaded from: 
 https://vanderbilt.box.com/s/6h6388kw6h4jbjogd8yk1xqp9eotd3tv
 
+Please run the following command if you use docker. 
+
 
 (1)NIfTI: 
 > sudo docker run -u root -v {LOCAL INPUTS PATH}:/INPUTS/ -v {LOCAL OUTPUTS PATH}:/OUTPUTS/ rg15/deeplungsimple:0.2 sh run_all.sh 
@@ -32,6 +34,29 @@ https://vanderbilt.box.com/s/6h6388kw6h4jbjogd8yk1xqp9eotd3tv
 (2) For DICOM-cpu: 
 > sudo docker run -u root -v {LOCAL INPUTS PATH}:/INPUTS/ -v {LOCAL OUTPUTS PATH}:/OUTPUTS/ rg15/deeplungsimple:0.2 sh run_all_DICOM.sh
 
+## Requirements of running the docker
 
+### Minimum Memory
+CPU: 4 GB  
 
+### Data Input
+Modality: CT
+Anatomy: Lungs
+Projection: axial
+Contrast: non
+Slice thickness: 2.5
+KVP: 120
+X-Ray Tube Current (mAs): 120
+Recon kernel/filter: 'STANDARD'
+Windows Center: "40"
+Window Width: "400"
+
+Note this is the information for the example image. Other reasonable settings of a CT should also be working. 
+
+### Data Output
+
+Images: .nii.gz, .npy
+PDF: .pdf
+Text: None (for this simple demo)
+CSV: None (for this simple demo)
 
