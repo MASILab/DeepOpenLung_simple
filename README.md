@@ -41,14 +41,23 @@ CPU: 4 GB
 
 ### Data Input
 Modality: CT
+
 Anatomy: Lungs
+
 Projection: axial
+
 Contrast: non
+
 Slice thickness: 2.5
+
 KVP: 120
+
 X-Ray Tube Current (mAs): 120
+
 Recon kernel/filter: 'STANDARD'
+
 Windows Center: "40"
+
 Window Width: "400"
 
 Note this is the information for the example image. Other reasonable settings of a CT should also be working. 
@@ -56,7 +65,10 @@ Note this is the information for the example image. Other reasonable settings of
 ### Data Output
 
 Images: .nii.gz, .npy
+
 PDF: .pdf
+
 Text: None (for this simple demo)
+
 CSV: None (for this simple demo)
 
