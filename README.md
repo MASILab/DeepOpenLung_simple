@@ -64,7 +64,7 @@ Note this is the information for the example image. Other reasonable settings of
 
 ### Data Output
 
-Images: .nii.gz, .npy
+Images: .nii.gz
 
 PDF: .pdf
 
