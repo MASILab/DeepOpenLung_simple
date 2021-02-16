@@ -30,3 +30,5 @@ python3 create_pdf.py --ori_root ${ORI_ROOT} --prep_root ${PREP_ROOT} --save_pdf
 
 
 echo " PDF created !"
+
+chmod -R 777 ${OUT_ROOT}

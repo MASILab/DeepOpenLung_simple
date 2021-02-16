@@ -1,4 +1,4 @@
-import os
+import os, stat
 import numpy as np
 from scipy.io import loadmat
 from scipy.ndimage.interpolation import zoom
@@ -10,6 +10,7 @@ import warnings
 import nibabel as nib
 import argparse
 import pandas as pd
+
 
 def process_mask(mask):
     convex_mask = np.copy(mask)
@@ -101,7 +102,7 @@ def savenpy(name,prep_folder,data_path,use_existing=True):
                     extendbox[2,0]:extendbox[2,1]]
         sliceim = sliceim2[np.newaxis,...]
         #save as npy
-        np.save(os.path.join(prep_folder,name+'_clean'),sliceim)
+        #np.save(os.path.join(prep_folder,name+'_clean'),sliceim)
 
         #Save as nifti
         sliceim=sliceim.reshape(sliceim.shape[-3], sliceim.shape[-2], sliceim.shape[-1])
@@ -110,6 +111,7 @@ def savenpy(name,prep_folder,data_path,use_existing=True):
         #activate the following line to keep conformity with old data
         #ni_img = nib.Nifti1Image(sliceim, matr)
         nib.save(ni_img, os.path.join(prep_folder,name+'_clean.nii.gz'))
+        
 
     except Exception as e:
         print('bug in '+name)
